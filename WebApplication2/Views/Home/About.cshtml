@@ -1,7 +1,17 @@
 ﻿@{
     ViewBag.Title = "About";
 }
+@model Dictionary<string,string>
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+
+
+    @foreach (KeyValuePair<string, string> pair in Model)
+    {
+        <p>
+            <strong>@pair.Key</strong>: <span>@pair.Value</span>
+        </p>
+    }
+
